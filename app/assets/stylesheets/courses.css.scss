@@ -1,0 +1,219 @@
+// Place all the styles related to the courses controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.course-container
+{
+	background-color: #f1d3d3;
+	margin-bottom: 0.08em;
+	padding-top: 0.25em;
+	width: 100%;
+}
+
+.course-info
+{
+	width: 100%;
+	background-color: #ffdddd;
+	display: inline-block;
+}
+
+.course-info-inverted
+{
+	width: 100%;
+	background-color: #884444;
+	display: inline-block;
+	margin-top: -0.2em;
+
+	border-bottom-style: solid;
+	border-bottom-width: 0.2em;
+	border-bottom-color: #662222;
+
+//	height: 1.8em;
+}
+
+.course-header-text
+{
+	font-size: 1.3em;
+	font-family: sans-serif;
+	color: #cc8888;
+	vertical-align: middle !important;
+	padding: 0;
+	margin: 0;
+}
+
+.cht-inv  { color: #ffdddd !important; }
+
+.subject-catalog
+{
+	width: 25%;
+	float: left;
+	font-size: 1.3em;
+	margin-left: 0.6em;
+}
+
+.course-name
+{
+	float: left;
+}
+
+.course-options
+{
+	float: right;
+	text-align: right;
+	vertical-align: middle;
+}
+
+.course-options a
+{
+	vertical-align: middle !important;
+	margin-right: 1em;
+	margin-top: 1.57em !important;
+	padding: 0 !important;
+	font-size: 1.3em !important;
+	font-family: sans-serif !important;
+	color: #bb9999;
+}
+
+.coa a { color: #bb9999 !important; }
+.coa a:hover { color: #884444 !important; }
+
+.coa-inv a { color: #ccaaaa !important; }
+.coa-inv a:hover{ color: #aaaacc !important; }
+
+.course-options a:hover
+{
+	color: #884444;
+	text-decoration: underline;
+	font-weight: normal !important;
+}
+
+.course-options a:visited
+{
+
+}
+
+.sections-container
+{
+	min-height: 5em;
+	background-color: #f4d2d2;
+	margin-bottom: 1.2em;
+	margin-top: -0.1em;
+	padding-bottom: 0;
+}
+
+.alrt { float: right; }
+.allt { float: left;  }
+.inblk { display: inline-block; }
+.full { width: 100%; }
+.half { width: 50%; }
+.quart { width: 25%;}
+.lmargin { margin-left: 0em; }
+.rmargin { margin-right: 0em; }
+.mbot { margin-bottom: 0.4em; }
+.rtalign { text-align: right;}
+
+.section-row
+{
+	height: 1.3em;
+	display: inline-block;
+	width: 100%;
+
+	padding-top: 0.1em;
+	padding-bottom: 0.1em;
+
+	border-bottom-width: 0.13em;
+	border-bottom-color: #eac8c8;
+	border-bottom-style: solid;
+}
+
+.empty-sec-row
+{
+	height: 1.2em;
+}
+a .section-row.inv
+{
+	background-color: #995555 !important;
+	margin-bottom: -0em !important;
+
+	border-bottom-width: 0.13em !important;
+	border-bottom-color: #8d4a4a !important;
+	border-bottom-style: solid !important;
+}
+.section-container a
+{
+	height: 1.43em;
+}
+.section-row.inv .sec-element
+{
+	font-family: sans-serif;
+	color: #eecccc !important;
+}
+
+.section-row .sec-element
+{
+	font-family: sans-serif;
+	color: #441111 !important;
+}
+
+.sel-lt
+{
+	float: left;
+
+	font-weight: bold;
+
+	margin-left: 1em;
+	width: 30%;
+}
+
+a:hover .section-row
+{
+	font-weight: normal !important;
+	text-decoration: none !important;
+}
+
+.sel-rt
+{
+	float: left;
+	width: 60%;
+
+}
+
+.sec-comb
+{
+	background-color: #aa6666;
+	margin-bottom: 0.00em;
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
+	width: 100%;
+
+	font-family: sans-serif;
+	font-size: 1em;
+	font-weight: bold;
+	letter-spacing: 0.1em;
+	color: #f3c1c1;
+
+	border-top: 0.2em;
+	border-top-style: solid;
+	border-top-color: #884444;
+
+	border-bottom: 0.2em;
+	border-bottom-style: solid;
+	border-bottom-color: #884444;
+
+	margin-top: -0.2em;
+}
+
+.sec-comb div
+{
+	margin-left: 1em;
+}
+
+.section-divider
+{
+	height: 0.35em;
+	width: 100%;
+	background-color: #e3c1c1;
+
+	margin-top: -0.24em;
+	margin-bottom: 0.23em;
+}

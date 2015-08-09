@@ -1,0 +1,60 @@
+<script>
+  changePageBarTitle("Schedule List");
+  clearLinks();
+</script>
+
+  <table max-width="100%" class="list-table sections-list">
+    <tr class="table-heading">
+      <th>Class Num</th>
+      <th>Subject</th>
+      <th>Course Num</th>
+      <th>Sec Num</th>
+      <th>Course Name</th>
+      <th>Section Description</th>
+      <th>Acad Group</th>
+      <th>Cap Enr</th>
+      <th>Days</th>
+      <th>Start Time</th>
+      <th>End Time</th>
+      <th>Room</th>
+      <th>Capacity</th>
+      <th>Last</th>
+      <th>First Name</th>
+      <th>Role</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Session</th>
+      <th>Location</th>
+      <th>Mode</th>
+      <th>CrsAtr Val</th>
+      <th>Component</th>
+    </tr>
+<% @report_table.each_with_index do |row, i| %>
+    <tr class=<%= @get_class.call(i) %>>
+      <td><%= row.class_num %></td>
+      <td><%= row.subject %></td>
+      <td><%= row.course_id %></td>
+      <td><%= row.sec_id %></td>
+      <td><%= row.course_name %></td>
+      <td><%= row.section_description %></td>
+      <td><%= row.acad_group %></td>
+      <td><%= row.enroll_cap %></td>
+      <td><%= row.days %></td>
+      <td><%= row.start_time %></td>
+      <td><%= row.end_time %></td>
+      <td><%= "#{row.building}#{row.room_num}" %></td>
+      <td><%= row.room_cap %></td>
+      <td><%= row.last_name %></td>
+      <td><%= row.first_name %></td>
+      <td><%= row.role %></td>
+      <td><%= row.start_date %></td>
+      <td><%= row.end_date %></td>
+      <td><%= row.session %></td>
+      <td><%= row.location %></td>
+      <td><%= row.mode %></td>
+      <td><%= row.crsatr_val %></td>
+      <td><%= row.component %></td>
+    </tr>
+<% end %>
+
+</table>

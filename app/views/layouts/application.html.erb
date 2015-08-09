@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CourseSchedulingAssistant</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="ui large inverted black menu absolute top">
+	<div class="item uno"></div>
+	<%= link_to controller: :home, action: :index do %>
+		<div class="item label mentext">UNO Course Scheduling Assistant</div>
+	<% end %>
+</div>
+<div class="ui grey menu">
+	<div class="ui simple dropdown item mentext">Manage
+		<div class="menu">
+			<%= link_to courses_path do %>
+				<div class="item mentext">Courses</div>
+			<% end %>
+			<%= link_to rooms_path do %>
+				<div class="item mentext">Rooms</div>
+			<% end %>
+			<%= link_to instructors_path do %>
+				<div class="item mentext">Instructors</div>
+			<% end %>
+			<%= link_to dates_path do %>
+			<div class="item mentext">Dates</div>
+			<% end %>
+		</div>
+	</div>
+	<div class="ui simple dropdown item mentext">Schedule
+		<div class="menu mentext">
+			<%= link_to controller: :home, action: :list do %>
+				<div class="item mentext">Display Schedule</div>
+			<% end %>
+			<%= link_to controller: :home, action: :import do %>
+				<div class="item mentext">Import</div>
+			<% end %>
+			<%= link_to controller: :home, action: :export do %>
+				<div class="item mentext">Export</div>
+			<% end %>
+
+			<%= link_to({controller: 'home', action: 'delete_all'}, confirm: "WARNING: All data will be DESTROYED. The consequences will never be the same!  Proceed?", method: 'delete') do %>
+				<div class="item mentext">Purge All</div>
+			<% end %>
+		</div>
+	</div>
+	<div class="ui simple dropdown item mentext">Reports
+		<div class="menu">
+			<%= link_to controller: :home, action: :room_pdf do %>
+				<div class="item mentext">Room Report</div>
+			<% end %>
+			<%= link_to controller: :home, action: :instructor_pdf do %>
+				<div class="item mentext">Instructor Report</div>
+			<% end %>
+		</div>
+	</div>
+</div>
+<div class="page-option-container" id="opbar">
+	<div id="page-title">
+		Course Scheduler
+	</div>
+	<div id="page-links">
+		<a href="/">Links</a>
+	</div>
+</div>
+<p class="flash"><%= flash.notice %></p>
+<div class="scroll-box page-height">
+<div class="content">
+	<div>
+	<%= yield %>
+	</div>
+</div>
+</div>
+</body>
+</html>

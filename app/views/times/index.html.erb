@@ -1,0 +1,22 @@
+<table class="list-table">
+  <tr>
+    <td colspan="6"><%= link_to "New Time", new_time_path %></td>
+  <tr class="table-heading">
+    <th>Days</th>
+    <th>Start Time</th>
+    <th>End Time</th>
+    <th>Instructors</th>
+    <th>Sections</th>
+    <th>Rooms</th>
+  </tr>
+  <% @times.each_with_index do |time, i| %>
+  <tr class=<%= @get_class.call(i) %>>
+    <td><%= time.days %></td>
+    <td><%= time.start_time %></td>
+    <td><%= time.end_time %></td>
+    <td><%= @instructors[i] %></td>
+    <td><%= @sections[i] %></td>
+    <td><%= @rooms[i] %></td>
+  </tr>
+  <% end %>
+</table>

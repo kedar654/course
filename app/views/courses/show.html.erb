@@ -1,0 +1,29 @@
+<script>
+  changePageBarTitle('<%= @course.subject %> <%= @course.course_id %> <%= @course.name %>');
+  clearLinks();
+  addLink('<%= link_to "New Section", new_sections_path(@course) %>')
+</script>
+
+<% @sections.each_with_index do |section, i | %>
+  <div class="course-container">
+    <div class="course-info-inverted">
+      <div class="subject-catalog course-header-text cht-inv">
+        <%= @course.subject %> <%= @course.course_id %>-<%= sprintf("%03d", section.sec_id) %>
+      </div>
+      <div class="course-name course-header-text cht-inv">
+        <%= section.sec_description %>
+      </div>
+      <div class="course-options coa-inv">
+        
+        <%= link_to "Comb", combine_section_path(section) %>
+        <%= link_to "Add Inst", add_instructor_section_path(section) %>
+        <%= link_to "Cross", cross_section_path(section) %>
+        <%= link_to "Edit", edit_section_path(section) %>
+        <%= link_to "Delete", section_path(section), method: :delete, data: {confirm: "Are you sure you want to delete this section?"} %>
+      </div>
+    </div>
+  </div>
+  <div class="sections-container">
+    <%= render 'sec_info', section: section %>
+</div>
+<% end %>

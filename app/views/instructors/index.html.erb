@@ -1,0 +1,22 @@
+<script>
+  changePageBarTitle("Instructor List");
+  clearLinks();
+  addLink('<%= link_to "New Instructor", new_instructor_path %>');
+</script>
+<table class="list-table">
+  <tr class="table-heading">
+    <th>Name</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  <% @instructors.each_with_index do |instructor, i| %>
+  <tr class=<%= @get_class.call(i) %>>
+    <td><%= "#{instructor.first_name} #{instructor.last_name}" %></td>
+    <td><%= link_to "Edit", edit_instructor_path(instructor) %></td>
+    <td>
+        <%= link_to "Delete", instructor_path(instructor), method: :delete, data: {confirm: "Are you sure you want to delete this instructor?"} %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+

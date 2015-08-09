@@ -1,0 +1,21 @@
+<script>
+  changePageBarTitle("Course Date List");
+  clearLinks();
+  addLink('<%= link_to "New Course Date", new_date_path %>');
+</script>
+
+<table class="list-table">
+  <tr class="table-heading">
+    <th>Start Date</th>
+    <th>End Date</th>
+    <th>Edit</th>
+  </tr>
+  <% @dates.each_with_index do |date, i| %>
+  <tr class=<%= @get_class.call(i) %>>
+    <td><%= date.start_date %></td>
+    <td><%= date.end_date %></td>
+    <td><%= link_to "Edit", edit_date_path(date) %></td>
+  </tr>
+  <% end %>
+</table>
+

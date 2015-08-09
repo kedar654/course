@@ -1,0 +1,6 @@
+Feature: Course Index Page
+
+	Scenario: Viewing course index page
+		Given there's a course with subject "csci" with catalog "9001" with course name "Vegeta Studies"
+		Given there's a time 
+		Given there's a section in that course with section number "1"

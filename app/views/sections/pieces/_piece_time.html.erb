@@ -1,0 +1,15 @@
+<%= field_set_tag "Times" do %>
+<div>
+<div class="block">
+	<%= render 'sections/pieces/time/days', disabled: @disabled[:time] %>
+</div>
+
+<div class="clear" id="start-time">
+	<%= render 'sections/pieces/time/timeset', time: :start %>
+</div>
+
+<div class="clear" id="end-time">
+	<%= render 'sections/pieces/time/timeset', time: :end %>
+</div>
+</div>
+<% end %>

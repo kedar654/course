@@ -1,0 +1,12 @@
+<%= field_set_tag "Instructor" do %>
+<div>
+	<div class="block">
+		<div class="type" id="instructor-container">
+			<%= render 'sections/pieces/instructor/name', set: @sets[:instructors], disabled: @disabled[:instructor], default: @sets[:instructor] %>
+		</div>
+		<div class="type">
+			<%= label_tag :instructor_lbl, "Name" %>
+		</div>
+	</div>
+</div>
+<% end %>

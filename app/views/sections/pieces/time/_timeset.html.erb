@@ -1,0 +1,18 @@
+<div class="type">
+	<div id=<%= "#{time.to_s}_hour" %>>
+		<%= render 'sections/pieces/time/unit', unit_name: "#{time.to_s}_hours", unit_set: @sets[:times][time][:hours], default: @sets[:time][time][:hour], disabled: @disabled[:time] %>
+	</div>
+</div>
+<div class="type">
+	<div id=<%= "#{time.to_s}_minute" %>>
+		<%= render 'sections/pieces/time/unit', unit_name: "#{time.to_s}_minutes", unit_set: @sets[:times][time][:minutes], default: @sets[:time][time][:minute], disabled: @disabled[:time] %>
+	</div>
+</div>
+<div class="type">
+	<div id=<%= "#{time.to_s}_period" %>>
+		<%= render 'sections/pieces/time/unit', unit_name: "#{time.to_s}_periods", unit_set: @sets[:times][time][:period], default: @sets[:time][time][:period], disabled: @disabled[:time] %>
+	</div>
+</div>
+<div class="type">
+	<%= label_tag(time.to_s.capitalize) %>
+</div>

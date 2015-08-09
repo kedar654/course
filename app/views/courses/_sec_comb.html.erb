@@ -1,0 +1,14 @@
+<% unless section.section_setting.sections.count == 1 %>
+	<div class="sec-comb">
+		<div>Course Sections with Same Settings</div>
+	</div>
+	<% section.section_setting.sections.each do |sec| %>
+		<% unless section == sec %>
+			<div class="empty-sec-row">
+			<%= link_to(course_path(sec.course)) do %>
+				<%= render 'sec_row', name: "#{sec.course_id_s}", value: "#{sec.course.name}", inverted: "inv" %>
+			<% end %>
+			</div>
+		<% end %>
+	<% end %>
+<% end %>

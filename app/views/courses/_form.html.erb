@@ -1,0 +1,17 @@
+<%= form_for(@course) do |f| %>
+	<p>
+		<%= f.label :subject %><br />
+		<%= f.text_field :subject %>
+	</p>
+	<p>
+		<%= f.label :catalog %><br />
+		<%= f.text_field :course_id %>
+	</p>
+	<p>
+		<%= f.label :course_name %><br />
+		<%= f.text_field :name %>
+	</p>
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>

@@ -1,0 +1,11 @@
+<%= render 'sec_row', name: "Class Number:", value: "#{section.class_num}", inverted: "" %>
+<%= render 'sec_row', name: "Seats:", value: "#{section.sec_capacity}", inverted: "" %>
+
+<div class="section-divider"></div>
+
+<%= render 'sec_row', name: "Room:", value: "#{section.room_s}", inverted: "" %>
+<%= render 'sec_row', name: "Time:", value: "#{section.time_s}", inverted: "" %>
+<%= render 'sec_row', name: "Instructor:", value: "#{section.instructor_s}", inverted: "" %>
+<%= render 'sec_row', name: "Date:", value: "#{section.date_s}", inverted: "" %>
+
+<%= render 'sec_comb', section: section %>

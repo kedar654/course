@@ -1,0 +1,14 @@
+<script>
+	changePageBarTitle("Import from Spreadsheet");
+	clearLinks();
+</script>
+
+<p>When importing the CSV file, change the course description
+   from 'Descr' to 'CDescr' and section description from 'Descr' to 'SDescr'
+</p>
+<p>Importing won't work otherwise.
+<%= form_tag('/import', multipart: true, method: 'post') do %>
+<p><label for="upload_file">Select File</label> :
+<%= file_field :import, :file %></p>
+<%= submit_tag 'Import' %>
+<% end %>

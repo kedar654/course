@@ -1,0 +1,18 @@
+Given(/^there's a course with subject "(.*?)" with catalog "(.*?)" with course name "(.*?)"$/) do |arg1, arg2, arg3|
+  #pending # express the regexp above with the code you wish you had
+
+  visit "/"
+ 
+expect(page).to have_content arg1
+expect(page).to have_content arg2
+expect(page).to have_content arg3
+  
+end
+
+Given(/^there's a time$/) do
+  expect(page).to have_content "652145"
+end
+
+Given(/^there's a section in that course with section number "(.*?)"$/) do |arg1|
+ expect(page).to have_content arg1
+end

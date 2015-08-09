@@ -1,0 +1,17 @@
+<table class="time-table clear">
+	<tr>
+		<td>Mon</td>
+		<td>Tue</td>
+		<td>Wed</td>
+		<td>Thu</td>
+		<td>Fri</td>
+		<td>Sat</td>
+	</tr>
+	<tr>
+		<% [[:mon, "M"], [:tue, "T"], [:wed, "W"], [:thu, "R"], [:fri, "F"], [:sat, "S"]].each do |day| %>
+		<td>
+			<%= check_box_tag day[0], day[1], @sets[:time][day[0]], {disabled: disabled} %>
+		</td>
+		<% end %>
+	</tr>
+	</table>

@@ -1,0 +1,8 @@
+<div class="block">
+  <div class="type">
+    <%= text_field_tag elkey, @sets[elkey], placeholder: @textbox_vals[:placeholder][phkey], disabled: @disabled[elkey] %>
+  </div>
+  <div class="type">
+    <%= label_tag "#{elkey}-lbl".to_sym, @textbox_vals[:label][elkey] %>
+  </div>
+</div>

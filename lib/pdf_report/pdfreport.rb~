@@ -1,0 +1,488 @@
+module PdfReport
+
+class Pdfreport
+  
+require "prawn"
+
+  def self.create_instructor_pdf(reportvalue)
+Prawn::Document.generate("instructor.pdf",:page_size => [1000, 1500] ) do  
+  font "Times-Roman", :style => :bold
+draw_text("PKI 1254", :at => [100, (bounds.top - 2)],:size=>12)
+       draw_text('probable conflict', :at => [400, (bounds.top - 2)],:size=>12)
+ draw_text('Time', :at => [100, (bounds.top - 30)],:size=>15)
+ draw_text('Monday', :at => [200, (bounds.top - 30)],:size=>15)
+ draw_text('Tuesday', :at => [300, (bounds.top - 30)],:size=>15)
+ draw_text('Wensday', :at => [400, (bounds.top - 30)],:size=>15)
+ draw_text('Thirsday', :at => [500, (bounds.top - 30)],:size=>15)
+ draw_text('Friday', :at => [600, (bounds.top - 30)],:size=>15)
+ 
+ #draw_text('07.30 AM', :at => [0, (bounds.top - 60)])
+ draw_text('0730 ', :at => [100, (bounds.top - 60)],:size=>15)
+ draw_text('0800 ', :at => [100, (bounds.top - 100)],:size=>15)
+ draw_text('0830 ', :at => [100, (bounds.top - 140)],:size=>15)
+
+ #draw_text('09.00 AM', :at => [0, (bounds.top - 180)])
+ draw_text('0900 ', :at => [100, (bounds.top - 180)],:size=>15)
+ draw_text('0930 ', :at => [100, (bounds.top - 220)],:size=>15)
+ draw_text('1000 ', :at => [100, (bounds.top - 260)],:size=>15)
+
+ #draw_text('10.30 AM', :at => [0, (bounds.top - 300)])
+ draw_text('1030 ', :at => [100, (bounds.top - 300)],:size=>15)
+ draw_text('1100 ', :at => [100, (bounds.top - 340)],:size=>15)
+ draw_text('1130 ', :at => [100, (bounds.top - 380)],:size=>15)
+ 
+  
+ #draw_text('12.00 AM', :at => [0, (bounds.top - 420)])
+ draw_text('1200 ', :at => [100, (bounds.top - 420)],:size=>15)
+ draw_text('1230 ', :at => [100, (bounds.top - 460)],:size=>15)
+ draw_text('1300 ', :at => [100, (bounds.top - 500)],:size=>15)
+
+
+#draw_text('01.30 PM', :at => [0, (bounds.top - 540)])
+ draw_text('1330 ', :at => [100, (bounds.top - 540)],:size=>15)
+draw_text('1400 ', :at => [100, (bounds.top - 580)],:size=>15)
+draw_text('1430 ', :at => [100, (bounds.top - 620)],:size=>15)
+
+
+#draw_text('3.00 PM', :at => [0, (bounds.top - 660)])
+ draw_text('1500 ', :at => [100, (bounds.top - 660)],:size=>15)
+draw_text('1530 ', :at => [100, (bounds.top - 700)],:size=>15)
+draw_text('1600 ', :at => [100, (bounds.top - 740)],:size=>15)
+
+
+#draw_text('04.30 PM', :at => [0, (bounds.top - 780)])
+ draw_text('1630 ', :at => [100, (bounds.top - 780)],:size=>15)
+draw_text('1700 ', :at => [100, (bounds.top - 820)],:size=>15)
+draw_text('1730 ', :at => [100, (bounds.top - 860)],:size=>15)
+
+
+#draw_text('06.00 PM', :at => [0, (bounds.top - 900)])
+ draw_text('1800 ', :at => [100, (bounds.top - 900)],:size=>15)
+draw_text('1830 ', :at => [100, (bounds.top - 940)],:size=>15)
+draw_text('1900 ', :at => [100, (bounds.top - 980)],:size=>15)
+
+
+#draw_text('07.30 PM', :at => [0, (bounds.top - 1020)])
+ draw_text('1930 ', :at => [100, (bounds.top - 1020)],:size=>15)
+draw_text('2000 ', :at => [100, (bounds.top - 1060)],:size=>15)
+draw_text('2030 ', :at => [100, (bounds.top - 1100)],:size=>15)
+  
+
+# draw_text('09.00 PM', :at => [0, (bounds.top - 1140)])
+ draw_text('2100 ', :at => [100, (bounds.top - 1140)],:size=>15)
+draw_text('2130 ', :at => [100, (bounds.top - 1180)],:size=>15)
+draw_text('2200 ', :at => [100, (bounds.top - 1220)],:size=>15)
+  
+  
+      
+   #monday
+  
+dayarray = {  "M"=>200,"T"=>300,"W"=>400,"R"=>500,"F"=>600,"S"=>700}
+#timearray = {7=>30,8=>0,8=>30,9=>0,9=>30,10=>0,10=>30,11=>0,11=>30,12=>0,12=>30,13=>0,13=>30,14=>0,14=>30,15=>0,15=>30,16=>0,16=>30,17=>0,17=>30,18=>0,18=>30,19=>0,19=>30,20=>0,20=>30,21=>0}
+timearray = [ [7,30],[8,0],[8,30],[9,0],[9,30],[10,0],[10,30],[11,0],[11,30],[12,0],[12,30],[13,0],[13,30],[14,0],[14,30],[15,0],[15,30],[16,0],[16,30],[17,0],[17,30],[18,0],[18,30],[19,0],[19,30],[20,0],[20,30],[21,0] ]
+
+      
+      #report is course
+  reportvalue.each do |course|
+   course.sections.each do |section|
+     p section.section_setting.course_date.start_date
+      p end_date = Date.parse(section.section_setting.course_date.end_date )
+ #   
+     start_date = Date.parse(section.section_setting.course_date.start_date.split("/")[1]+"/"+section.section_setting.course_date.start_date.split("/")[0] +"/" + section.section_setting.course_date.start_date.split("/")[2])
+     end_date = Date.parse(section.section_setting.course_date.end_date.split("/")[1]+"/"+section.section_setting.course_date.end_date.split("/")[0]+"/"+section.section_setting.course_date.end_date.split("/")[2] )
+ #    if Date.today >= start_date
+ #       if Date.today <= end_date
+     p Date.today
+     p start_date
+     p "555555555555"
+     p "1111111111111111"
+     if Date.today >= start_date
+        p end_date
+        p "////"
+        if Date.today <= end_date
+  
+              #from date fix now need to fix a time for that need to creat a time object
+          #the comparison is with same day 7.30 time
+          #t1=(Time.new(Date.today.year,Date.today.month,Date.today.day, 23, 16, 00))
+            
+              dayarray.each do |dkey,dvalue|
+               p dkey
+               p "dkkkk"
+                if section.section_setting.time_slot.days.include? dkey  
+                              x = dvalue
+                              yvalueincr = 0
+            yvalue =  bounds.top - 60
+                       p x
+                       p "xxxxxx"
+                    #so here my x is get defined and to decide a yneed a loop on time array
+                    #the loop start at y 60 and get increaed by 40 and if match then fill color.
+                    
+                    #current_time = Time.new(Date.today.year,Date.today.month,Date.today.day, 23, 16, 15) 
+                    #start_time = Time.new(Date.today.year,Date.today.month,Date.today.day, 23, 16, 15)
+                    #end_time = Time.new(Date.today.year,Date.today.month,Date.today.day, 23, 16, 15)
+                          #- 20
+                             timearray.each do |key|
+                               p "timearray"
+                               p key
+                               value = key[1] 
+                               p value
+                              
+                    current_time = Time.new(Date.today.year,Date.today.month,Date.today.day, key[0], value, 00) 
+                                 
+                                   yvalue = bounds.top - (60+yvalueincr)      
+                                 yvalueincr = yvalueincr + 40
+                               starthour = section.section_setting.time_slot.start_time.split(":")[0].to_i
+                               startminut = section.section_setting.time_slot.start_time.split(":")[1].to_i
+                               endthour = section.section_setting.time_slot.end_time.split(":")[0].to_i
+                               endminut = section.section_setting.time_slot.end_time.split(":")[1].to_i
+                              if  section.section_setting.time_slot.start_time.include? "PM"
+                                    endthour = section.section_setting.time_slot.start_time.split(":")[0].to_i + 12
+                              end        
+                              if  section.section_setting.time_slot.end_time.include? "PM"
+                                    endthour = section.section_setting.time_slot.end_time.split(":")[0].to_i + 12
+                              end        
+                     
+                      
+                      start_time = Time.new(Date.today.year,Date.today.month,Date.today.day, starthour, startminut, 00)
+                      end_time = Time.new(Date.today.year,Date.today.month,Date.today.day, endthour, endminut, 00)
+                              p start_time
+                      p end_time
+                      p current_time
+                      
+                      p "++++++++++"
+                      p current_time
+                      p start_time
+                      current_time + 30.minutes
+                      #  11.10   12.30
+                      #11.30  ct     et  > st  and st < ct
+                       p  current_time.between?(start_time,end_time)
+                             if ( start_time.between?(current_time,(current_time+29.minutes)) )    
+                                     fill_color "DCDCDC"
+                                     fill_rectangle [x, (yvalue+10 )], 50, 15
+                                     fill_color "000000"
+#the 
+                                     draw_text( "#{course.subject}#{course.course_id}", :at => [x, (yvalue)])                               
+                             end
+                             if ( start_time < current_time and  end_time >= (current_time) )  
+                               p start_time
+                               p end_time
+                                     fill_color "DCDCDC"
+                                     fill_rectangle [x, (yvalue+10 )], 50, 15
+                                     fill_color "000000"
+                                     draw_text("#{course.subject}#{course.course_id}" , :at => [x, (yvalue)])    
+                                     p "colored"
+                                       
+                             end         
+                             p "beforeif"
+                             if ( start_time < current_time and  end_time >= (current_time-30.minutes) )    
+                                     fill_color "DCDCDC"
+                                     fill_rectangle [x, (yvalue+10 )], 50, 15
+                                     fill_color "000000"
+                                     draw_text( "#{course.subject}#{course.course_id}", :at => [x, (yvalue)])                               
+                             end 
+                              p "after if"
+                  
+                  
+                            end
+                end
+            end  
+          
+       
+     end
+     
+   end
+ end
+       
+     
+#777777777777
+      
+  end
+   
+  end
+  end
+  
+  
+  def self.create_room_pdf(reportvalue)
+ 
+p "5555555555555"
+p reportvalue.inspect
+p "5555555555555"
+
+
+
+#`````````````````````````````````````````````````````````````````````````
+
+
+Prawn::Document.generate("room.pdf",:page_size => [1000, 1500] ) do  
+
+      @total_pages = reportvalue.size / 5
+  if reportvalue.size % 5 != 0
+    @total_pages = @total_pages + 1
+  end
+  
+@start_page = 0
+
+
+
+      
+    def create_header
+@start_page = @start_page + 1
+      font "Times-Roman", :style => :bold
+
+draw_text('Report ID ', :at => [0, (bounds.top - 2)])
+#font "Times-Roman", :style => :normal
+
+draw_text(' 6541', :at => [50, (bounds.top - 2)])
+
+ 
+draw_text('University of Nebraska-Omaha', :size=>16,:at => [350, (bounds.top - 2)])
+font "Times-Roman", :style => :bold
+
+draw_text('Page No', :at => [750, (bounds.top - 2)])
+
+font "Times-Roman", :style => :normal
+
+draw_text("#{@start_page}" , :at => [810, (bounds.top - 2)])
+font "Times-Roman", :style => :bold
+draw_text('of', :at => [840, (bounds.top - 2)])
+
+font "Times-Roman", :style => :normal
+draw_text( "#{@total_pages}", :at => [860, (bounds.top - 2)])
+font "Times-Roman", :style => :bold
+
+draw_text('Schedule of Classes for Spring 2014', :size=>16, :at => [330, (bounds.top - 21)])
+#font "Times-Roman", :style => :bold
+
+draw_text('Run Date', :at => [750, (bounds.top - 15)])
+font "Times-Roman", :style => :normal
+draw_text( "#{ Date.today.strftime("%d/%m/%y")}", :at => [810, (bounds.top - 15)])
+font "Times-Roman", :style => :bold
+draw_text('Regular acadamic session', :size=>16, :at => [360, (bounds.top - 39)])
+font "Times-Roman", :style => :bold
+draw_text('Run Time', :at => [750, (bounds.top - 27)])
+font "Times-Roman", :style => :normal
+draw_text("#{Time.now.strftime("%H:%M:%S")}", :at => [810, (bounds.top - 27)])
+
+font "Times-Roman", :style => :bold
+draw_text('Information Science & Tech and Computer Science', :size=>16,:at => [290, (bounds.top - 68)])
+
+#draw_text('Subject 656 6 5 65 65 6 5', :at => [0, (bounds.top - 60)],:width=>5,:height=>150)
+###################the subject top line
+x=0
+y=100      
+font "Times-Roman", :style => :normal
+draw_text 'Subject', :at => [x, (bounds.top - y)],
+               :size=>15
+             
+x=x+60
+ draw_text 'Catelog Nbr', :at => [x, (bounds.top - y)],
+                :size=>15
+ x=x+90
+ draw_text 'Section', :at => [x, (bounds.top - y)],
+                :size=>15
+x=x+60
+ draw_text 'Class Nbr', :at => [x, (bounds.top - y)],
+                :size=>15
+x=x+70
+draw_text 'Course Title', :at => [x, (bounds.top - y)],
+                :size=>15
+x=x+180
+draw_text 'Component', :at => [x, (bounds.top - y)],
+                :size=>15
+x=x+100
+draw_text 'Units', :at => [x, (bounds.top - y)],
+                :size=>15
+x=x+80
+draw_text 'Topics', :at => [x, (bounds.top - y)],
+                :size=>15
+###################3end of subject top line
+font "Times-Roman", :style => :normal
+ 
+
+    end
+    
+    create_header
+     
+x=640
+y=100
+ 
+
+  
+ j=-1
+for i in 1..reportvalue.size do
+j=j+1
+        reportvalue[j]
+y=y+10
+  stroke do
+   horizontal_line(0, 800, :at => bounds.top - y)
+  end
+############above is line stroke
+###################the subject value line
+y=y+20 
+x=0
+draw_text  "#{reportvalue[j].course.subject}", :at => [x, (bounds.top - y)],
+              :size=>'13' 
+x=60
+ draw_text "#{reportvalue[j].course.course_id}", :at => [x, (bounds.top - y)],
+              :size=>'13' 
+ x=x+90
+ draw_text "#{reportvalue[j].sec_id}", :at => [x, (bounds.top - y)],
+              :size=>'13' 
+x=x+60
+ draw_text "#{reportvalue[j].class_num}", :at => [x, (bounds.top - y)],:size=>'13' 
+x=x+70
+draw_text "#{reportvalue[j].course.name}", :at => [x, (bounds.top - y)],
+              :size=>'13' 
+x=x+180
+draw_text "#{reportvalue[j].component}", :at => [x, (bounds.top - y)],
+              :size=>'13' 
+
+draw_text "totally online", :at => [x-10, (bounds.top - (y+15))],
+              :size=>'13' 
+
+x=x+100
+draw_text '3', :at => [x, (bounds.top - y)],
+              :size=>'13' 
+x=x+80
+draw_text 'topics', :at => [x, (bounds.top - y)],
+              :size=>'13' 
+###################3end of subject value line
+y=y+40
+x=0
+###################the subject 2nd value line
+font "Times-Roman", :style => :bold
+
+ draw_text 'Bldg', :at => [x, (bounds.top - y)],
+              :size=>13 
+font "Times-Roman", :style => :normal
+
+x=x+30
+ draw_text "#{reportvalue[j].location}", :at => [x, (bounds.top - y)],
+              :size=>13 
+font "Times-Roman", :style => :bold
+
+ x=x+170
+ draw_text 'Room', :at => [x, (bounds.top - y)],
+              :size=>13 
+font "Times-Roman", :style => :normal
+
+x=x+35
+ 
+ draw_text  "#{reportvalue[j].section_setting.room.room_num}", :at => [x, (bounds.top - y)], :size=>13   if  reportvalue[j].section_setting.room
+
+      x=x+50
+font "Times-Roman", :style => :bold
+
+draw_text 'Days', :at => [x, (bounds.top - y)],
+              :size=>13 
+x=x+35
+font "Times-Roman", :style => :normal
+
+draw_text  "#{reportvalue[j].section_setting.time_slot.days}", :at => [x, (bounds.top - y)],:size=>13  if reportvalue[j].section_setting.time_slot
+x=x+70
+font "Times-Roman", :style => :bold
+
+draw_text 'Time', :at => [x, (bounds.top - y)],
+              :size=>13 
+font "Times-Roman", :style => :normal
+
+x=x+30
+draw_text  "#{reportvalue[j].section_setting.time_slot.start_time} - #{reportvalue[j].section_setting.time_slot.end_time}", :at => [x, (bounds.top - y)],:size=>13 if reportvalue[j].section_setting.time_slot 
+x=x+155
+font "Times-Roman", :style => :bold
+
+draw_text 'Intructer', :at => [x, (bounds.top - y)],
+              :size=>13 
+x=x+70
+font "Times-Roman", :style => :normal
+
+draw_text "#{reportvalue[j].section_setting.instructor.first_name} #{reportvalue[j].section_setting.instructor.last_name}", :at => [x, (bounds.top - y)],:size=>13  if reportvalue[j].section_setting.instructor
+
+
+###################3end of subject 3
+
+
+
+
+
+x=0
+y=y+40  
+font "Times-Roman", :style => :bold
+
+###################the subject 2nd value line
+ draw_text 'Class Entrl Capacity', :at => [x, (bounds.top - y)],
+              :size=>13 
+x=x+120
+font "Times-Roman", :style => :normal
+
+ draw_text "#{reportvalue[j].sec_capacity}", :at => [x, (bounds.top - y)],
+              :size=>13 
+ x=x+40
+font "Times-Roman", :style => :bold
+
+ draw_text 'Class Entrl Tot', :at => [x, (bounds.top - y)],
+              :size=>13 
+x=x+90
+font "Times-Roman", :style => :normal
+
+ draw_text  "#{reportvalue[j].sec_capacity}", :at => [x, (bounds.top - y)],
+              :size=>13 
+x=x+50
+font "Times-Roman", :style => :bold
+
+draw_text 'Class Waite Cap', :at => [x, (bounds.top - y)],
+              :size=>13 
+x=x+100
+font "Times-Roman", :style => :normal
+
+draw_text  "#{reportvalue[j].sec_capacity}", :at => [x, (bounds.top - y)],
+              :size=>13 
+x=x+30
+font "Times-Roman", :style => :bold
+
+draw_text 'Class Wait Tot', :at => [x, (bounds.top - y)],
+              :size=>13 
+x=x+90
+font "Times-Roman", :style => :normal
+
+draw_text "#{reportvalue[j].sec_capacity}", :at => [x, (bounds.top - y)],
+              :size=>13 
+x=x+40
+font "Times-Roman", :style => :bold
+
+draw_text 'Class Min Enrol', :at => [x, (bounds.top - y)],
+              :size=>13 
+x=x+100
+font "Times-Roman", :style => :normal
+
+draw_text  "#{reportvalue[j].sec_capacity}", :at => [x, (bounds.top - y)],
+              :size=>13 
+
+
+###################3end of subject 3 line value line
+ if i%5 == 0 and i !=  reportvalue.size
+start_new_page
+#start new page
+ create_header
+ x=640
+y=100
+
+end
+ 
+
+end
+end
+
+#`````````````````````````````````````````````````````````````````````````
+
+
+
+
+
+
+
+
+end
+
+end
+end

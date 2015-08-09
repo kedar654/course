@@ -1,0 +1,34 @@
+<script>
+  changePageBarTitle("Room List");
+  clearLinks();
+  addLink('<%= link_to "New Room", new_room_path %>');
+</script>
+<table class="list-table">
+  <tr class="table-heading">
+    <th>Building</th>
+    <th>Room Number</th>
+    <th>Capacity</th>
+    <th>Desk Type</th>
+    <th>Board Type</th>
+    <th>Chair Type</th>
+    <th>Updated</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  <% @rooms.each_with_index do |room, i| %>
+  <tr class=<%= @get_class.call(i) %>>
+    <td><%= room.building %></td>
+    <td><%= room.room_num %></td>
+    <td><%= room.room_capacity %></td>
+    <td><%= room.desk_type %></td>
+    <td><%= room.board_type %></td>
+    <td><%= room.chair_type %></td>
+    <td><%= room.updated_at %></td>
+    <td><%= link_to "Edit", edit_room_path(room) %></td>
+    <td>
+        <%= link_to "Delete", room_path(room), method: :delete, data: {confirm: "Are you sure you want to delete this room?"} %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+

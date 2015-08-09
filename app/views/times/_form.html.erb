@@ -1,0 +1,53 @@
+<%= form_tag controller: "times", action: "create", method: "post" do %>
+  <table class="times-form">
+    <tr>
+      <td>Mon</td>
+      <td>Tue</td>
+      <td>Wed</td>
+      <td>Thu</td>
+      <td>Fri</td>
+    </tr>
+    <tr>
+      <td>
+        <%= check_box_tag :monday %>
+      </td>
+      <td>
+        <%= check_box_tag :tuesday %>
+      </td>
+      <td>
+        <%= check_box_tag :wednesday %>
+      </td>
+      <td>
+        <%= check_box_tag :thursday %>
+      </td>
+      <td>
+        <%= check_box_tag :friday %>
+      </td>
+      <td>
+        <%= check_box_tag :saturday %>
+      </td>
+    </tr>
+  </table>
+
+  <table>
+    <tr>
+      <td>Start Time</td>
+      <td>
+        <%= select_tag :s_hr, options_for_select(@hours) %>:
+        <%= select_tag :s_min, options_for_select(@minutes) %> 
+        <%= select_tag :s_per, options_for_select(@periods) %>
+      </td>
+    </tr>
+    <tr>
+      <td>End Time</td>
+      <td>
+        <%= select_tag :e_hr, options_for_select(@hours) %>:
+        <%= select_tag :e_min, options_for_select(@minutes) %> 
+        <%= select_tag :e_per, options_for_select(@periods) %>
+      </td>
+    </tr>
+  </table>
+
+  <%= submit_tag "Create" %>
+
+<% end %>

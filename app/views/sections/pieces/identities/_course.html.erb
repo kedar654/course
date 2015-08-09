@@ -1,0 +1,8 @@
+<div class="block">
+	<div class="type">
+		<%= select_tag(:course_list, options_for_select(@sets[:courses], @sets[:course]), {disabled: @disabled[:course]}) %>
+	</div>
+	<div class="type">
+		<%= label_tag :course_lbl, "Course" %>
+	</div>
+</div>

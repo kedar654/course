@@ -1,0 +1,253 @@
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2015-03-16 14:18:34 +0530
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/list
+Completed 302 Found in 13ms (ActiveRecord: 0.0ms)
+Started GET "/list" for 127.0.0.1 at 2015-03-16 14:18:34 +0530
+Processing by HomeController#list as HTML
+  [1m[35mSection Load (0.5ms)[0m  SELECT sections.id as id, sections.class_num as class_num, courses.subject as subject, courses.course_id as course_id, sections.sec_id as sec_id, courses.name as course_name, sections.sec_description as section_description, sections.acad_group as acad_group, sections.sec_capacity as enroll_cap, time_slots.days as days, time_slots.start_time as start_time, time_slots.end_time as end_time, rooms.building as building, rooms.room_num as room_num, rooms.room_capacity as room_cap, instructors.last_name as last_name, instructors.first_name as first_name, sections.role as role, course_dates.start_date as start_date, course_dates.end_date as end_date, sections.session as session, sections.location as location, sections.mode as mode, sections.crsatr_val as crsatr_val, sections.component as component FROM "sections" INNER JOIN "courses" ON "courses"."id" = "sections"."course_id" INNER JOIN "section_settings" ON "section_settings"."id" = "sections"."section_setting_id" INNER JOIN "instructors" ON "instructors"."id" = "section_settings"."instructor_id" INNER JOIN "time_slots" ON "time_slots"."id" = "section_settings"."time_slot_id" INNER JOIN "rooms" ON "rooms"."id" = "section_settings"."room_id" INNER JOIN "course_dates" ON "course_dates"."id" = "section_settings"."course_date_id"
+SQLite3::SQLException: no such table: sections: SELECT sections.id as id, sections.class_num as class_num, courses.subject as subject, courses.course_id as course_id, sections.sec_id as sec_id, courses.name as course_name, sections.sec_description as section_description, sections.acad_group as acad_group, sections.sec_capacity as enroll_cap, time_slots.days as days, time_slots.start_time as start_time, time_slots.end_time as end_time, rooms.building as building, rooms.room_num as room_num, rooms.room_capacity as room_cap, instructors.last_name as last_name, instructors.first_name as first_name, sections.role as role, course_dates.start_date as start_date, course_dates.end_date as end_date, sections.session as session, sections.location as location, sections.mode as mode, sections.crsatr_val as crsatr_val, sections.component as component FROM "sections" INNER JOIN "courses" ON "courses"."id" = "sections"."course_id" INNER JOIN "section_settings" ON "section_settings"."id" = "sections"."section_setting_id" INNER JOIN "instructors" ON "instructors"."id" = "section_settings"."instructor_id" INNER JOIN "time_slots" ON "time_slots"."id" = "section_settings"."time_slot_id" INNER JOIN "rooms" ON "rooms"."id" = "section_settings"."room_id" INNER JOIN "course_dates" ON "course_dates"."id" = "section_settings"."course_date_id"
+Completed 500 Internal Server Error in 42ms
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2015-03-16 14:21:16 +0530
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/list
+Completed 302 Found in 13ms (ActiveRecord: 0.0ms)
+Started GET "/list" for 127.0.0.1 at 2015-03-16 14:21:16 +0530
+Processing by HomeController#list as HTML
+  [1m[35mSection Load (0.5ms)[0m  SELECT sections.id as id, sections.class_num as class_num, courses.subject as subject, courses.course_id as course_id, sections.sec_id as sec_id, courses.name as course_name, sections.sec_description as section_description, sections.acad_group as acad_group, sections.sec_capacity as enroll_cap, time_slots.days as days, time_slots.start_time as start_time, time_slots.end_time as end_time, rooms.building as building, rooms.room_num as room_num, rooms.room_capacity as room_cap, instructors.last_name as last_name, instructors.first_name as first_name, sections.role as role, course_dates.start_date as start_date, course_dates.end_date as end_date, sections.session as session, sections.location as location, sections.mode as mode, sections.crsatr_val as crsatr_val, sections.component as component FROM "sections" INNER JOIN "courses" ON "courses"."id" = "sections"."course_id" INNER JOIN "section_settings" ON "section_settings"."id" = "sections"."section_setting_id" INNER JOIN "instructors" ON "instructors"."id" = "section_settings"."instructor_id" INNER JOIN "time_slots" ON "time_slots"."id" = "section_settings"."time_slot_id" INNER JOIN "rooms" ON "rooms"."id" = "section_settings"."room_id" INNER JOIN "course_dates" ON "course_dates"."id" = "section_settings"."course_date_id"
+SQLite3::SQLException: no such table: sections: SELECT sections.id as id, sections.class_num as class_num, courses.subject as subject, courses.course_id as course_id, sections.sec_id as sec_id, courses.name as course_name, sections.sec_description as section_description, sections.acad_group as acad_group, sections.sec_capacity as enroll_cap, time_slots.days as days, time_slots.start_time as start_time, time_slots.end_time as end_time, rooms.building as building, rooms.room_num as room_num, rooms.room_capacity as room_cap, instructors.last_name as last_name, instructors.first_name as first_name, sections.role as role, course_dates.start_date as start_date, course_dates.end_date as end_date, sections.session as session, sections.location as location, sections.mode as mode, sections.crsatr_val as crsatr_val, sections.component as component FROM "sections" INNER JOIN "courses" ON "courses"."id" = "sections"."course_id" INNER JOIN "section_settings" ON "section_settings"."id" = "sections"."section_setting_id" INNER JOIN "instructors" ON "instructors"."id" = "section_settings"."instructor_id" INNER JOIN "time_slots" ON "time_slots"."id" = "section_settings"."time_slot_id" INNER JOIN "rooms" ON "rooms"."id" = "section_settings"."room_id" INNER JOIN "course_dates" ON "course_dates"."id" = "section_settings"."course_date_id"
+Completed 500 Internal Server Error in 45ms
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2015-03-16 14:22:31 +0530
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/list
+Completed 302 Found in 12ms (ActiveRecord: 0.0ms)
+Started GET "/list" for 127.0.0.1 at 2015-03-16 14:22:32 +0530
+Processing by HomeController#list as HTML
+  [1m[35mSection Load (0.5ms)[0m  SELECT sections.id as id, sections.class_num as class_num, courses.subject as subject, courses.course_id as course_id, sections.sec_id as sec_id, courses.name as course_name, sections.sec_description as section_description, sections.acad_group as acad_group, sections.sec_capacity as enroll_cap, time_slots.days as days, time_slots.start_time as start_time, time_slots.end_time as end_time, rooms.building as building, rooms.room_num as room_num, rooms.room_capacity as room_cap, instructors.last_name as last_name, instructors.first_name as first_name, sections.role as role, course_dates.start_date as start_date, course_dates.end_date as end_date, sections.session as session, sections.location as location, sections.mode as mode, sections.crsatr_val as crsatr_val, sections.component as component FROM "sections" INNER JOIN "courses" ON "courses"."id" = "sections"."course_id" INNER JOIN "section_settings" ON "section_settings"."id" = "sections"."section_setting_id" INNER JOIN "instructors" ON "instructors"."id" = "section_settings"."instructor_id" INNER JOIN "time_slots" ON "time_slots"."id" = "section_settings"."time_slot_id" INNER JOIN "rooms" ON "rooms"."id" = "section_settings"."room_id" INNER JOIN "course_dates" ON "course_dates"."id" = "section_settings"."course_date_id"
+SQLite3::SQLException: no such table: sections: SELECT sections.id as id, sections.class_num as class_num, courses.subject as subject, courses.course_id as course_id, sections.sec_id as sec_id, courses.name as course_name, sections.sec_description as section_description, sections.acad_group as acad_group, sections.sec_capacity as enroll_cap, time_slots.days as days, time_slots.start_time as start_time, time_slots.end_time as end_time, rooms.building as building, rooms.room_num as room_num, rooms.room_capacity as room_cap, instructors.last_name as last_name, instructors.first_name as first_name, sections.role as role, course_dates.start_date as start_date, course_dates.end_date as end_date, sections.session as session, sections.location as location, sections.mode as mode, sections.crsatr_val as crsatr_val, sections.component as component FROM "sections" INNER JOIN "courses" ON "courses"."id" = "sections"."course_id" INNER JOIN "section_settings" ON "section_settings"."id" = "sections"."section_setting_id" INNER JOIN "instructors" ON "instructors"."id" = "section_settings"."instructor_id" INNER JOIN "time_slots" ON "time_slots"."id" = "section_settings"."time_slot_id" INNER JOIN "rooms" ON "rooms"."id" = "section_settings"."room_id" INNER JOIN "course_dates" ON "course_dates"."id" = "section_settings"."course_date_id"
+Completed 500 Internal Server Error in 43ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2015-03-16 14:23:14 +0530
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/list
+Completed 302 Found in 13ms (ActiveRecord: 0.0ms)
+Started GET "/list" for 127.0.0.1 at 2015-03-16 14:23:14 +0530
+Processing by HomeController#list as HTML
+  [1m[35mSection Load (0.5ms)[0m  SELECT sections.id as id, sections.class_num as class_num, courses.subject as subject, courses.course_id as course_id, sections.sec_id as sec_id, courses.name as course_name, sections.sec_description as section_description, sections.acad_group as acad_group, sections.sec_capacity as enroll_cap, time_slots.days as days, time_slots.start_time as start_time, time_slots.end_time as end_time, rooms.building as building, rooms.room_num as room_num, rooms.room_capacity as room_cap, instructors.last_name as last_name, instructors.first_name as first_name, sections.role as role, course_dates.start_date as start_date, course_dates.end_date as end_date, sections.session as session, sections.location as location, sections.mode as mode, sections.crsatr_val as crsatr_val, sections.component as component FROM "sections" INNER JOIN "courses" ON "courses"."id" = "sections"."course_id" INNER JOIN "section_settings" ON "section_settings"."id" = "sections"."section_setting_id" INNER JOIN "instructors" ON "instructors"."id" = "section_settings"."instructor_id" INNER JOIN "time_slots" ON "time_slots"."id" = "section_settings"."time_slot_id" INNER JOIN "rooms" ON "rooms"."id" = "section_settings"."room_id" INNER JOIN "course_dates" ON "course_dates"."id" = "section_settings"."course_date_id"
+SQLite3::SQLException: no such table: sections: SELECT sections.id as id, sections.class_num as class_num, courses.subject as subject, courses.course_id as course_id, sections.sec_id as sec_id, courses.name as course_name, sections.sec_description as section_description, sections.acad_group as acad_group, sections.sec_capacity as enroll_cap, time_slots.days as days, time_slots.start_time as start_time, time_slots.end_time as end_time, rooms.building as building, rooms.room_num as room_num, rooms.room_capacity as room_cap, instructors.last_name as last_name, instructors.first_name as first_name, sections.role as role, course_dates.start_date as start_date, course_dates.end_date as end_date, sections.session as session, sections.location as location, sections.mode as mode, sections.crsatr_val as crsatr_val, sections.component as component FROM "sections" INNER JOIN "courses" ON "courses"."id" = "sections"."course_id" INNER JOIN "section_settings" ON "section_settings"."id" = "sections"."section_setting_id" INNER JOIN "instructors" ON "instructors"."id" = "section_settings"."instructor_id" INNER JOIN "time_slots" ON "time_slots"."id" = "section_settings"."time_slot_id" INNER JOIN "rooms" ON "rooms"."id" = "section_settings"."room_id" INNER JOIN "course_dates" ON "course_dates"."id" = "section_settings"."course_date_id"
+Completed 500 Internal Server Error in 43ms
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36m (114.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (133.2ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateRooms (20141023211305)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "rooms" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "building" varchar(255), "room_num" integer, "room_capacity" integer, "desk_type" varchar(255), "board_type" varchar(255), "chair_type" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.3ms)[0m  CREATE UNIQUE INDEX "index_rooms_on_building_and_room_num" ON "rooms" ("building", "room_num")
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141023211305"]]
+  [1m[35m (114.0ms)[0m  commit transaction
+Migrating to CreateInstructors (20141023211459)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "instructors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.3ms)[0m  [1mCREATE UNIQUE INDEX "index_instructors_on_first_name_and_last_name" ON "instructors" ("first_name", "last_name")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20141023211459"]]
+  [1m[36m (129.4ms)[0m  [1mcommit transaction[0m
+Migrating to CreateTimeSlots (20141023211603)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "time_slots" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "days" varchar(255), "start_time" varchar(255), "end_time" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.3ms)[0m  CREATE UNIQUE INDEX "time_slot_index" ON "time_slots" ("days", "start_time", "end_time")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141023211603"]]
+  [1m[35m (151.7ms)[0m  commit transaction
+Migrating to CreateCourses (20141023211723)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "courses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "course_id" integer, "subject" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.3ms)[0m  [1mCREATE UNIQUE INDEX "index_courses_on_course_id_and_subject" ON "courses" ("course_id", "subject")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20141023211723"]]
+  [1m[36m (140.5ms)[0m  [1mcommit transaction[0m
+Migrating to CreateCourseDates (20141023211919)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "course_dates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "start_date" varchar(255), "end_date" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.6ms)[0m  CREATE UNIQUE INDEX "index_course_dates_on_start_date_and_end_date" ON "course_dates" ("start_date", "end_date")
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141023211919"]]
+  [1m[35m (149.7ms)[0m  commit transaction
+Migrating to CreateSectionSettings (20141023212042)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "section_settings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "time_slot_id" integer, "instructor_id" integer, "room_id" integer, "course_date_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.5ms)[0m  [1mCREATE UNIQUE INDEX "section_setting_index" ON "section_settings" ("time_slot_id", "instructor_id", "room_id")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20141023212042"]]
+  [1m[36m (162.6ms)[0m  [1mcommit transaction[0m
+Migrating to CreateSections (20141023212241)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "sections" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "class_num" integer, "course_id" integer, "section_setting_id" integer, "sec_id" integer, "sec_description" varchar(255), "sec_capacity" integer, "crsatr_val" varchar(255), "mode" varchar(255), "acad_group" varchar(255), "location" varchar(255), "component" varchar(255), "role" varchar(255), "session" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.7ms)[0m  CREATE UNIQUE INDEX "section_index" ON "sections" ("course_id", "sec_id", "section_setting_id")
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141023212241"]]
+  [1m[35m (147.1ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (0.7ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2015-03-16 14:27:06 +0530
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/list
+Completed 302 Found in 12ms (ActiveRecord: 0.0ms)
+Started GET "/list" for 127.0.0.1 at 2015-03-16 14:27:06 +0530
+Processing by HomeController#list as HTML
+  [1m[35mSection Load (0.4ms)[0m  SELECT sections.id as id, sections.class_num as class_num, courses.subject as subject, courses.course_id as course_id, sections.sec_id as sec_id, courses.name as course_name, sections.sec_description as section_description, sections.acad_group as acad_group, sections.sec_capacity as enroll_cap, time_slots.days as days, time_slots.start_time as start_time, time_slots.end_time as end_time, rooms.building as building, rooms.room_num as room_num, rooms.room_capacity as room_cap, instructors.last_name as last_name, instructors.first_name as first_name, sections.role as role, course_dates.start_date as start_date, course_dates.end_date as end_date, sections.session as session, sections.location as location, sections.mode as mode, sections.crsatr_val as crsatr_val, sections.component as component FROM "sections" INNER JOIN "courses" ON "courses"."id" = "sections"."course_id" INNER JOIN "section_settings" ON "section_settings"."id" = "sections"."section_setting_id" INNER JOIN "instructors" ON "instructors"."id" = "section_settings"."instructor_id" INNER JOIN "time_slots" ON "time_slots"."id" = "section_settings"."time_slot_id" INNER JOIN "rooms" ON "rooms"."id" = "section_settings"."room_id" INNER JOIN "course_dates" ON "course_dates"."id" = "section_settings"."course_date_id"
+  Rendered home/list.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 74ms (Views: 30.5ms | ActiveRecord: 3.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.8ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2015-03-16 15:05:01 +0530
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/list
+Completed 302 Found in 12ms (ActiveRecord: 0.0ms)
+Started GET "/list" for 127.0.0.1 at 2015-03-16 15:05:01 +0530
+Processing by HomeController#list as HTML
+  [1m[35mSection Load (0.6ms)[0m  SELECT sections.id as id, sections.class_num as class_num, courses.subject as subject, courses.course_id as course_id, sections.sec_id as sec_id, courses.name as course_name, sections.sec_description as section_description, sections.acad_group as acad_group, sections.sec_capacity as enroll_cap, time_slots.days as days, time_slots.start_time as start_time, time_slots.end_time as end_time, rooms.building as building, rooms.room_num as room_num, rooms.room_capacity as room_cap, instructors.last_name as last_name, instructors.first_name as first_name, sections.role as role, course_dates.start_date as start_date, course_dates.end_date as end_date, sections.session as session, sections.location as location, sections.mode as mode, sections.crsatr_val as crsatr_val, sections.component as component FROM "sections" INNER JOIN "courses" ON "courses"."id" = "sections"."course_id" INNER JOIN "section_settings" ON "section_settings"."id" = "sections"."section_setting_id" INNER JOIN "instructors" ON "instructors"."id" = "section_settings"."instructor_id" INNER JOIN "time_slots" ON "time_slots"."id" = "section_settings"."time_slot_id" INNER JOIN "rooms" ON "rooms"."id" = "section_settings"."room_id" INNER JOIN "course_dates" ON "course_dates"."id" = "section_settings"."course_date_id"
+  Rendered home/list.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 96ms (Views: 22.0ms | ActiveRecord: 3.8ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.7ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2015-03-16 15:08:11 +0530
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/list
+Completed 302 Found in 13ms (ActiveRecord: 0.0ms)
+Started GET "/list" for 127.0.0.1 at 2015-03-16 15:08:11 +0530
+Processing by HomeController#list as HTML
+  [1m[35mSection Load (0.6ms)[0m  SELECT sections.id as id, sections.class_num as class_num, courses.subject as subject, courses.course_id as course_id, sections.sec_id as sec_id, courses.name as course_name, sections.sec_description as section_description, sections.acad_group as acad_group, sections.sec_capacity as enroll_cap, time_slots.days as days, time_slots.start_time as start_time, time_slots.end_time as end_time, rooms.building as building, rooms.room_num as room_num, rooms.room_capacity as room_cap, instructors.last_name as last_name, instructors.first_name as first_name, sections.role as role, course_dates.start_date as start_date, course_dates.end_date as end_date, sections.session as session, sections.location as location, sections.mode as mode, sections.crsatr_val as crsatr_val, sections.component as component FROM "sections" INNER JOIN "courses" ON "courses"."id" = "sections"."course_id" INNER JOIN "section_settings" ON "section_settings"."id" = "sections"."section_setting_id" INNER JOIN "instructors" ON "instructors"."id" = "section_settings"."instructor_id" INNER JOIN "time_slots" ON "time_slots"."id" = "section_settings"."time_slot_id" INNER JOIN "rooms" ON "rooms"."id" = "section_settings"."room_id" INNER JOIN "course_dates" ON "course_dates"."id" = "section_settings"."course_date_id"
+  Rendered home/list.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 96ms (Views: 21.7ms | ActiveRecord: 3.8ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.7ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2015-03-16 15:08:49 +0530
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/list
+Completed 302 Found in 13ms (ActiveRecord: 0.0ms)
+Started GET "/list" for 127.0.0.1 at 2015-03-16 15:08:49 +0530
+Processing by HomeController#list as HTML
+  [1m[35mSection Load (0.6ms)[0m  SELECT sections.id as id, sections.class_num as class_num, courses.subject as subject, courses.course_id as course_id, sections.sec_id as sec_id, courses.name as course_name, sections.sec_description as section_description, sections.acad_group as acad_group, sections.sec_capacity as enroll_cap, time_slots.days as days, time_slots.start_time as start_time, time_slots.end_time as end_time, rooms.building as building, rooms.room_num as room_num, rooms.room_capacity as room_cap, instructors.last_name as last_name, instructors.first_name as first_name, sections.role as role, course_dates.start_date as start_date, course_dates.end_date as end_date, sections.session as session, sections.location as location, sections.mode as mode, sections.crsatr_val as crsatr_val, sections.component as component FROM "sections" INNER JOIN "courses" ON "courses"."id" = "sections"."course_id" INNER JOIN "section_settings" ON "section_settings"."id" = "sections"."section_setting_id" INNER JOIN "instructors" ON "instructors"."id" = "section_settings"."instructor_id" INNER JOIN "time_slots" ON "time_slots"."id" = "section_settings"."time_slot_id" INNER JOIN "rooms" ON "rooms"."id" = "section_settings"."room_id" INNER JOIN "course_dates" ON "course_dates"."id" = "section_settings"."course_date_id"
+  Rendered home/list.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 98ms (Views: 22.1ms | ActiveRecord: 3.8ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.7ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2015-03-16 15:10:19 +0530
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/list
+Completed 302 Found in 13ms (ActiveRecord: 0.0ms)
+Started GET "/list" for 127.0.0.1 at 2015-03-16 15:10:19 +0530
+Processing by HomeController#list as HTML
+  [1m[35mSection Load (0.6ms)[0m  SELECT sections.id as id, sections.class_num as class_num, courses.subject as subject, courses.course_id as course_id, sections.sec_id as sec_id, courses.name as course_name, sections.sec_description as section_description, sections.acad_group as acad_group, sections.sec_capacity as enroll_cap, time_slots.days as days, time_slots.start_time as start_time, time_slots.end_time as end_time, rooms.building as building, rooms.room_num as room_num, rooms.room_capacity as room_cap, instructors.last_name as last_name, instructors.first_name as first_name, sections.role as role, course_dates.start_date as start_date, course_dates.end_date as end_date, sections.session as session, sections.location as location, sections.mode as mode, sections.crsatr_val as crsatr_val, sections.component as component FROM "sections" INNER JOIN "courses" ON "courses"."id" = "sections"."course_id" INNER JOIN "section_settings" ON "section_settings"."id" = "sections"."section_setting_id" INNER JOIN "instructors" ON "instructors"."id" = "section_settings"."instructor_id" INNER JOIN "time_slots" ON "time_slots"."id" = "section_settings"."time_slot_id" INNER JOIN "rooms" ON "rooms"."id" = "section_settings"."room_id" INNER JOIN "course_dates" ON "course_dates"."id" = "section_settings"."course_date_id"
+  Rendered home/list.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 96ms (Views: 21.9ms | ActiveRecord: 3.8ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.6ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2015-03-16 15:12:39 +0530
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/list
+Completed 302 Found in 13ms (ActiveRecord: 0.0ms)
+Started GET "/list" for 127.0.0.1 at 2015-03-16 15:12:39 +0530
+Processing by HomeController#list as HTML
+  [1m[35mSection Load (0.6ms)[0m  SELECT sections.id as id, sections.class_num as class_num, courses.subject as subject, courses.course_id as course_id, sections.sec_id as sec_id, courses.name as course_name, sections.sec_description as section_description, sections.acad_group as acad_group, sections.sec_capacity as enroll_cap, time_slots.days as days, time_slots.start_time as start_time, time_slots.end_time as end_time, rooms.building as building, rooms.room_num as room_num, rooms.room_capacity as room_cap, instructors.last_name as last_name, instructors.first_name as first_name, sections.role as role, course_dates.start_date as start_date, course_dates.end_date as end_date, sections.session as session, sections.location as location, sections.mode as mode, sections.crsatr_val as crsatr_val, sections.component as component FROM "sections" INNER JOIN "courses" ON "courses"."id" = "sections"."course_id" INNER JOIN "section_settings" ON "section_settings"."id" = "sections"."section_setting_id" INNER JOIN "instructors" ON "instructors"."id" = "section_settings"."instructor_id" INNER JOIN "time_slots" ON "time_slots"."id" = "section_settings"."time_slot_id" INNER JOIN "rooms" ON "rooms"."id" = "section_settings"."room_id" INNER JOIN "course_dates" ON "course_dates"."id" = "section_settings"."course_date_id"
+  Rendered home/list.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 81ms (Views: 21.7ms | ActiveRecord: 3.7ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.7ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2015-03-16 15:14:02 +0530
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/list
+Completed 302 Found in 13ms (ActiveRecord: 0.0ms)
+Started GET "/list" for 127.0.0.1 at 2015-03-16 15:14:02 +0530
+Processing by HomeController#list as HTML
+  [1m[35mSection Load (0.5ms)[0m  SELECT sections.id as id, sections.class_num as class_num, courses.subject as subject, courses.course_id as course_id, sections.sec_id as sec_id, courses.name as course_name, sections.sec_description as section_description, sections.acad_group as acad_group, sections.sec_capacity as enroll_cap, time_slots.days as days, time_slots.start_time as start_time, time_slots.end_time as end_time, rooms.building as building, rooms.room_num as room_num, rooms.room_capacity as room_cap, instructors.last_name as last_name, instructors.first_name as first_name, sections.role as role, course_dates.start_date as start_date, course_dates.end_date as end_date, sections.session as session, sections.location as location, sections.mode as mode, sections.crsatr_val as crsatr_val, sections.component as component FROM "sections" INNER JOIN "courses" ON "courses"."id" = "sections"."course_id" INNER JOIN "section_settings" ON "section_settings"."id" = "sections"."section_setting_id" INNER JOIN "instructors" ON "instructors"."id" = "section_settings"."instructor_id" INNER JOIN "time_slots" ON "time_slots"."id" = "section_settings"."time_slot_id" INNER JOIN "rooms" ON "rooms"."id" = "section_settings"."room_id" INNER JOIN "course_dates" ON "course_dates"."id" = "section_settings"."course_date_id"
+  Rendered home/list.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 79ms (Views: 21.7ms | ActiveRecord: 3.6ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.6ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2015-03-16 15:15:01 +0530
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/list
+Completed 302 Found in 13ms (ActiveRecord: 0.0ms)
+Started GET "/list" for 127.0.0.1 at 2015-03-16 15:15:01 +0530
+Processing by HomeController#list as HTML
+  [1m[35mSection Load (0.5ms)[0m  SELECT sections.id as id, sections.class_num as class_num, courses.subject as subject, courses.course_id as course_id, sections.sec_id as sec_id, courses.name as course_name, sections.sec_description as section_description, sections.acad_group as acad_group, sections.sec_capacity as enroll_cap, time_slots.days as days, time_slots.start_time as start_time, time_slots.end_time as end_time, rooms.building as building, rooms.room_num as room_num, rooms.room_capacity as room_cap, instructors.last_name as last_name, instructors.first_name as first_name, sections.role as role, course_dates.start_date as start_date, course_dates.end_date as end_date, sections.session as session, sections.location as location, sections.mode as mode, sections.crsatr_val as crsatr_val, sections.component as component FROM "sections" INNER JOIN "courses" ON "courses"."id" = "sections"."course_id" INNER JOIN "section_settings" ON "section_settings"."id" = "sections"."section_setting_id" INNER JOIN "instructors" ON "instructors"."id" = "section_settings"."instructor_id" INNER JOIN "time_slots" ON "time_slots"."id" = "section_settings"."time_slot_id" INNER JOIN "rooms" ON "rooms"."id" = "section_settings"."room_id" INNER JOIN "course_dates" ON "course_dates"."id" = "section_settings"."course_date_id"
+  Rendered home/list.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 79ms (Views: 21.8ms | ActiveRecord: 3.6ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.7ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2015-03-16 15:15:50 +0530
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/list
+Completed 302 Found in 13ms (ActiveRecord: 0.0ms)
+Started GET "/list" for 127.0.0.1 at 2015-03-16 15:15:50 +0530
+Processing by HomeController#list as HTML
+  [1m[35mSection Load (0.6ms)[0m  SELECT sections.id as id, sections.class_num as class_num, courses.subject as subject, courses.course_id as course_id, sections.sec_id as sec_id, courses.name as course_name, sections.sec_description as section_description, sections.acad_group as acad_group, sections.sec_capacity as enroll_cap, time_slots.days as days, time_slots.start_time as start_time, time_slots.end_time as end_time, rooms.building as building, rooms.room_num as room_num, rooms.room_capacity as room_cap, instructors.last_name as last_name, instructors.first_name as first_name, sections.role as role, course_dates.start_date as start_date, course_dates.end_date as end_date, sections.session as session, sections.location as location, sections.mode as mode, sections.crsatr_val as crsatr_val, sections.component as component FROM "sections" INNER JOIN "courses" ON "courses"."id" = "sections"."course_id" INNER JOIN "section_settings" ON "section_settings"."id" = "sections"."section_setting_id" INNER JOIN "instructors" ON "instructors"."id" = "section_settings"."instructor_id" INNER JOIN "time_slots" ON "time_slots"."id" = "section_settings"."time_slot_id" INNER JOIN "rooms" ON "rooms"."id" = "section_settings"."room_id" INNER JOIN "course_dates" ON "course_dates"."id" = "section_settings"."course_date_id"
+  Rendered home/list.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 79ms (Views: 21.6ms | ActiveRecord: 4.2ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.6ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2015-03-16 15:16:50 +0530
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/list
+Completed 302 Found in 13ms (ActiveRecord: 0.0ms)
+Started GET "/list" for 127.0.0.1 at 2015-03-16 15:16:50 +0530
+Processing by HomeController#list as HTML
+  [1m[35mSection Load (0.6ms)[0m  SELECT sections.id as id, sections.class_num as class_num, courses.subject as subject, courses.course_id as course_id, sections.sec_id as sec_id, courses.name as course_name, sections.sec_description as section_description, sections.acad_group as acad_group, sections.sec_capacity as enroll_cap, time_slots.days as days, time_slots.start_time as start_time, time_slots.end_time as end_time, rooms.building as building, rooms.room_num as room_num, rooms.room_capacity as room_cap, instructors.last_name as last_name, instructors.first_name as first_name, sections.role as role, course_dates.start_date as start_date, course_dates.end_date as end_date, sections.session as session, sections.location as location, sections.mode as mode, sections.crsatr_val as crsatr_val, sections.component as component FROM "sections" INNER JOIN "courses" ON "courses"."id" = "sections"."course_id" INNER JOIN "section_settings" ON "section_settings"."id" = "sections"."section_setting_id" INNER JOIN "instructors" ON "instructors"."id" = "section_settings"."instructor_id" INNER JOIN "time_slots" ON "time_slots"."id" = "section_settings"."time_slot_id" INNER JOIN "rooms" ON "rooms"."id" = "section_settings"."room_id" INNER JOIN "course_dates" ON "course_dates"."id" = "section_settings"."course_date_id"
+  Rendered home/list.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 79ms (Views: 21.8ms | ActiveRecord: 3.6ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.7ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2015-03-16 15:17:26 +0530
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/list
+Completed 302 Found in 13ms (ActiveRecord: 0.0ms)
+Started GET "/list" for 127.0.0.1 at 2015-03-16 15:17:26 +0530
+Processing by HomeController#list as HTML
+  [1m[35mSection Load (0.6ms)[0m  SELECT sections.id as id, sections.class_num as class_num, courses.subject as subject, courses.course_id as course_id, sections.sec_id as sec_id, courses.name as course_name, sections.sec_description as section_description, sections.acad_group as acad_group, sections.sec_capacity as enroll_cap, time_slots.days as days, time_slots.start_time as start_time, time_slots.end_time as end_time, rooms.building as building, rooms.room_num as room_num, rooms.room_capacity as room_cap, instructors.last_name as last_name, instructors.first_name as first_name, sections.role as role, course_dates.start_date as start_date, course_dates.end_date as end_date, sections.session as session, sections.location as location, sections.mode as mode, sections.crsatr_val as crsatr_val, sections.component as component FROM "sections" INNER JOIN "courses" ON "courses"."id" = "sections"."course_id" INNER JOIN "section_settings" ON "section_settings"."id" = "sections"."section_setting_id" INNER JOIN "instructors" ON "instructors"."id" = "section_settings"."instructor_id" INNER JOIN "time_slots" ON "time_slots"."id" = "section_settings"."time_slot_id" INNER JOIN "rooms" ON "rooms"."id" = "section_settings"."room_id" INNER JOIN "course_dates" ON "course_dates"."id" = "section_settings"."course_date_id"
+  Rendered home/list.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 79ms (Views: 21.6ms | ActiveRecord: 3.7ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m

@@ -1,0 +1,20 @@
+<% if @disabled[:room].eql?("false") || !@disabled[:room] %>
+$('#room').html('<%= escape_javascript(render partial: "sections/pieces/room/room_num", locals: {rooms: @new_sets[:rooms], room: @new_sets[:room], disabled: false}) %>');
+<% end %>
+
+<% if @disabled[:time].eql?("false") || !@disabled[:time] %>
+console.log("SDga");
+$('#end_hour').html('<%= escape_javascript(render partial: "sections/pieces/time/unit", locals: {unit_name: :end_hours, unit_set: @new_sets[:times][:end][:hours], default: @new_sets[:time][:hour], disabled: false}) %>');
+$('#end_minute').html('<%= escape_javascript(render partial: "sections/pieces/time/unit", locals: {unit_name: :end_minutes, unit_set: @new_sets[:times][:end][:minutes], default: @new_sets[:time][:minute], disabled: false}) %>');
+$('#end_period').html('<%= escape_javascript(render partial: "sections/pieces/time/unit", locals: {unit_name: :end_periods, unit_set: @new_sets[:times][:end][:period], default: @new_sets[:time][:period], disabled: false}) %>');	
+<% end %>
+
+console.log("eher");
+<% if @disabled[:instructor].eql?("false") || !@disabled[:instructor] %>
+	$('#instructor-container').html('<%= escape_javascript(render partial: "sections/pieces/instructor/name", locals: {set: @new_sets[:instructors], default: @new_sets[:instructor], disabled: false, default: @new_sets[:instructor]}) %>');
+<% end %>
+
+<% if @disabled[:seats].eql?("false") || !@disabled[:seats] %>
+	console.log("Seats");
+	$('#seat-label').html('<%= escape_javascript(render partial: "sections/pieces/seats/label", locals: {value: @new_sets[:seat_lbl]}) %>');
+<% end %>

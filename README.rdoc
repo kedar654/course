@@ -1,0 +1,74 @@
+= Initial Documentation
+
+This is an example paragraph to seperate the second heading.
+
+= Database Functions
+
+This section describes certain functions and queries for the database.
+
+== Report Table 
+
+This is the table from which everything is combined into one table for the reporting aspect.  I tried and tested this and it works.
+
+I have put the code for creating the report table in the section model.  The function returns an array which can be iterated through by the each function.
+
+=== How to access the report table
+
+Calling the report table function is really simple.  All that needs to happen is the following code below.
+
+  Section.report_table_query
+
+This should be used in the controller by creating an instance variable.  So in controller foo, function bar this is how it would go
+
+  class FooController
+    ...
+    def bar
+      @report_array = Section.report_table_query
+      ...
+    end
+  end
+
+This can be accessed in the view by the following code
+
+  <% @report_array.each do |row| %>
+  ...
+  <%= row.class_num %>
+  ...
+  <% end %>
+
+=== Variable Names
+
+- class_num
+- subject
+- course_id
+- sec_id
+- course_name
+- section_description
+- acad_group
+- enroll_cap
+- days
+- start_hour
+- start_minute
+- end_hour
+- end_minute
+- building
+- room_num
+- room_cap
+- last_name
+- first_name
+- start_date
+- end_date
+- location
+- mode
+- crsatr_val
+- component
+
+== Other Query Ideas
+
+
+
+= CSV Notes
+
+To parse CSV, read this tutorial
+
+http://tutorials.jumpstartlab.com/projects/eventmanager.html

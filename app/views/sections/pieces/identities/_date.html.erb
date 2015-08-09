@@ -1,0 +1,8 @@
+<div class="block">
+	<div class="type">
+		<%= select_tag(:date_list, options_for_select(@sets[:dates], @sets[:date]), {disabled: @disabled[:date]}) %>
+	</div>
+	<div class="type">
+		<%= label_tag :date_lbl, "Date" %>
+	</div>
+</div>

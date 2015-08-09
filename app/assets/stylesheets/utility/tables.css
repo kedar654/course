@@ -1,0 +1,35 @@
+.list-table { border-collapse: collapse;}
+.list-table th, .list-table td
+{
+	/*border: 1px solid black; */
+	border: 0;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+}
+
+.sections-list th, .sections-list td
+{
+	font-size: 0.69em;
+}
+
+.list-table tr th 
+{ 
+  text-align: left;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.table-row-odd td a, .table-row-even td a
+{
+  color: #AA2222;
+  text-decoration: none;
+}
+
+.table-row-odd td a:hover, .table-row-even td a:hover
+{
+	color: #FF8888;
+	text-decoration: underline;
+}
+
+.table-row-odd td { background-color: #eeeeee; }
+.table-row-even td { background-color: #bebebe; }

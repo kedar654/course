@@ -1,0 +1,38 @@
+<%= render 'sections/form_script' %>
+
+<%= form_for @section, url: {controller: 'sections', action: @action, method: :post} do |f| %>
+
+<div class= "sec-form">
+  <div class="block">
+    <div class="type">
+     <div class="block">
+      <div class="type">
+        <div class="clear">
+          <%= render 'sections/pieces/piece_instructor' %>
+        </div>
+        <div class="clear">
+          <%= render 'sections/pieces/piece_time', disabled: false %>
+        </div>
+      </div>
+      <div class="type">
+        <div class="clear">
+          <%= render 'sections/pieces/piece_room', disabled: disable_room %>
+        </div>
+        <div class="clear">
+          <%= render 'sections/pieces/piece_seats' %>
+        </div>
+        <div class="clear">
+          <%= field_set_tag "Submission" do %>
+          <%= submit_tag "Submit" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="type">
+        <%= render 'sections/pieces/piece_identities' %>
+    </div>
+  </div>
+</div>
+
+<% end %>

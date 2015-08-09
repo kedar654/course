@@ -1,0 +1,10 @@
+<%= field_set_tag "Seats" do %>
+<div>
+	<div class="block">
+		<div class="type">
+			<%= number_field_tag(:seats, @sets[:seats], min: 1, max: 100, disabled: @disabled[:seats]) %>
+		</div>
+		<div class="type" id="seat-label">
+			<%= render '/sections/pieces/seats/label', value: @sets[:seat_lbl] %>
+		</div>
+<% end %>

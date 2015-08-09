@@ -1,0 +1,53 @@
+// Place all the styles related to the sections controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.sec-form
+{
+
+}
+
+.block
+{
+	display: inline-block;
+	min-height: 3%;
+	float: none;
+}
+
+.right
+{
+	float: right;
+}
+
+.left
+{
+	float: left;
+}
+
+.block .type
+{
+	float: left;
+	min-width: 5%;
+	height: 100%;
+	display: block;
+}
+
+fieldset
+{
+	min-width: 2%;
+}
+
+.clear
+{
+	clear: both;
+}
+
+.block div
+{
+	min-width: 5%;
+
+}
+.sec-time
+{
+
+}

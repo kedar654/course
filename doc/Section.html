@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Section - RDoc Documentation</title>
+
+<link href="./fonts.css" rel="stylesheet">
+<link href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/navigation.js"></script>
+<script src="./js/search_index.js"></script>
+<script src="./js/search.js"></script>
+<script src="./js/searcher.js"></script>
+<script src="./js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#class-Section-label-Description">Description</a>
+    <li><a href="#class-Section-label-Column+Names">Column Names</a>
+    <li><a href="#class-Section-label-Notes">Notes</a>
+    <li><a href="#class-Section-label-Model+List">Model List</a>
+  </ul>
+</div>
+
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">ActiveRecord::Base
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-report_table_query">::report_table_query</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Section">
+  <h1 id="class-Section" class="class">
+    class Section
+  </h1>
+
+  <section class="description">
+    
+<h2 id="class-Section-label-Description">Description<span><a href="#class-Section-label-Description">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>This is the table for the course section. This is the main table, which can
+join all other tables.</p>
+
+<h2 id="class-Section-label-Column+Names">Column Names<span><a href="#class-Section-label-Column+Names">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<ul><li>
+<p>class_num</p>
+</li><li>
+<p>course_id</p>
+</li><li>
+<p>section_setting_id</p>
+</li><li>
+<p>sec_id</p>
+</li><li>
+<p>sec_description</p>
+</li><li>
+<p>sec_capacity</p>
+</li><li>
+<p>crsatr_val</p>
+</li><li>
+<p>mode</p>
+</li><li>
+<p>acad_group</p>
+</li><li>
+<p>location</p>
+</li><li>
+<p>component</p>
+</li></ul>
+
+<h2 id="class-Section-label-Notes">Notes<span><a href="#class-Section-label-Notes">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>All the other *_id’s correspond to another table, except sec_id. sec_id is
+the section number for a course.</p>
+
+<h2 id="class-Section-label-Model+List">Model List<span><a href="#class-Section-label-Model+List">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>Ordered by least dependent to most dependent</p>
+
+<p><a href="Course.html">Course</a></p>
+
+<p><a href="CourseDate.html">CourseDate</a></p>
+
+<p><a href="Instructor.html">Instructor</a></p>
+
+<p><a href="Room.html">Room</a></p>
+
+<p><a href="TimeSlot.html">TimeSlot</a></p>
+
+<p><a href="SectionSetting.html">SectionSetting</a></p>
+
+<p><a href="Section.html">Section</a></p>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-report_table_query" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">report_table_query</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Combines multiple tables into one table for generating reports</p>
+
+<p>Returns an array of rows</p>
+          
+          
+
+          
+          <div class="method-source-code" id="report_table_query-source">
+            <pre><span class="ruby-comment"># File app/models/section.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">report_table_query</span>
+  <span class="ruby-identifier">report_query</span> = ([]  <span class="ruby-operator">&lt;&lt;</span>  <span class="ruby-string">'sections.class_num as class_num, '</span> <span class="ruby-operator">&lt;&lt;</span>
+                      <span class="ruby-string">'courses.subject as subject, '</span> <span class="ruby-operator">&lt;&lt;</span>
+                      <span class="ruby-string">'courses.course_id as course_id, '</span> <span class="ruby-operator">&lt;&lt;</span>
+                      <span class="ruby-string">'sections.sec_id as sec_id, '</span> <span class="ruby-operator">&lt;&lt;</span>
+                      <span class="ruby-string">'courses.name as course_name, '</span> <span class="ruby-operator">&lt;&lt;</span>
+                      <span class="ruby-string">'sections.sec_description as section_description, '</span> <span class="ruby-operator">&lt;&lt;</span>
+                      <span class="ruby-string">'sections.acad_group as acad_group, '</span> <span class="ruby-operator">&lt;&lt;</span>
+                      <span class="ruby-string">'sections.sec_capacity as enroll_cap, '</span> <span class="ruby-operator">&lt;&lt;</span>
+                      <span class="ruby-string">'time_slots.days as days, '</span> <span class="ruby-operator">&lt;&lt;</span>
+                      <span class="ruby-string">'time_slots.start_time_hour as start_hour, '</span> <span class="ruby-operator">&lt;&lt;</span>
+                      <span class="ruby-string">'time_slots.start_time_minute as start_minute, '</span> <span class="ruby-operator">&lt;&lt;</span>
+                      <span class="ruby-string">'time_slots.end_time_hour as end_hour, '</span> <span class="ruby-operator">&lt;&lt;</span>
+                      <span class="ruby-string">'time_slots.end_time_minute as end_minute, '</span> <span class="ruby-operator">&lt;&lt;</span>
+                      <span class="ruby-string">'rooms.building as building, '</span> <span class="ruby-operator">&lt;&lt;</span>
+                      <span class="ruby-string">'rooms.room_num as room_num, '</span> <span class="ruby-operator">&lt;&lt;</span>
+                      <span class="ruby-string">'rooms.room_capacity as room_cap, '</span> <span class="ruby-operator">&lt;&lt;</span>
+                      <span class="ruby-string">'instructors.last_name as last_name, '</span> <span class="ruby-operator">&lt;&lt;</span>
+                      <span class="ruby-string">'instructors.first_name as first_name, '</span>  <span class="ruby-operator">&lt;&lt;</span>
+                      <span class="ruby-string">'course_dates.start_date as start_date, '</span> <span class="ruby-operator">&lt;&lt;</span>
+                      <span class="ruby-string">'course_dates.end_date as end_date, '</span> <span class="ruby-operator">&lt;&lt;</span>
+                      <span class="ruby-string">'sections.location as location, '</span> <span class="ruby-operator">&lt;&lt;</span>
+                      <span class="ruby-string">'sections.mode as mode, '</span> <span class="ruby-operator">&lt;&lt;</span>
+                      <span class="ruby-string">'sections.crsatr_val as crsatr_val, '</span> <span class="ruby-operator">&lt;&lt;</span>
+                      <span class="ruby-string">'sections.component as component'</span>).<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;&quot;</span>)
+  
+  <span class="ruby-constant">Section</span>.<span class="ruby-identifier">joins</span>(<span class="ruby-value">:course</span>, <span class="ruby-identifier">section_setting</span><span class="ruby-operator">:</span> [<span class="ruby-value">:instructor</span>, <span class="ruby-value">:time_slot</span>, <span class="ruby-value">:room</span>, <span class="ruby-value">:course_date</span>]).<span class="ruby-identifier">select</span>(<span class="ruby-identifier">report_query</span>).<span class="ruby-identifier">to_a</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
