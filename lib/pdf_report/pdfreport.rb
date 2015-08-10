@@ -59,10 +59,10 @@ module PdfReport
             if section.section_setting.course_date  
             if  section.section_setting.time_slot 
             if  section.section_setting.room.room_num == room_num.to_i
-              start_date = Date.parse(section.section_setting.course_date.start_date.split("/")[1]+"/"+section.section_setting.course_date.start_date.split("/")[0] +"/" + section.section_setting.course_date.start_date.split("/")[2])
-              end_date = Date.parse(section.section_setting.course_date.end_date.split("/")[1]+"/"+section.section_setting.course_date.end_date.split("/")[0]+"/"+section.section_setting.course_date.end_date.split("/")[2] )
-              if Date.today >= start_date
-                if Date.today <= end_date
+             # start_date = Date.parse(section.section_setting.course_date.start_date.split("/")[1]+"/"+section.section_setting.course_date.start_date.split("/")[0] +"/" + section.section_setting.course_date.start_date.split("/")[2])
+             # end_date = Date.parse(section.section_setting.course_date.end_date.split("/")[1]+"/"+section.section_setting.course_date.end_date.split("/")[0]+"/"+section.section_setting.course_date.end_date.split("/")[2] )
+              if true#Date.today >= start_date
+                if true#Date.today <= end_date
                   dayarray.each do |dkey,dvalue|
                     if section.section_setting.time_slot.days.include? dkey  
                       timearray.each do |key|
